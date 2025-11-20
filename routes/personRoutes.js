@@ -34,7 +34,7 @@ router.get('/', async (req, res) => {
 })
 
 //GET method for workType or Parametric call
-router.get('//:workType', async (req, res) => {
+router.get('/:workType', async (req, res) => {
     try {
         const workType = req.params.workType;
         if (workType == 'chef' || workType == 'manager' || workType == 'waiter') {
@@ -78,7 +78,7 @@ router.put('/:id', async (req, res) => {
 })
 
 //DELETE method 
-app.delete('/person/:id', async (req, res) => {
+router.delete('/person/:id', async (req, res) => {
     try {
         const personId = req.params.id; // Extract the person's ID  from the URL parameter
         // Assuming you have a Person model
