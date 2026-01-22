@@ -43,6 +43,7 @@ const passport = require('./auth');
 
 const bodyParser = require('body-parser');
 app.use(bodyParser.json());
+//db();  // fix the issue issue is we are not calling the db in server file  
 
 const PORT = process.env.PORT || 4000;
 
@@ -65,7 +66,7 @@ const personRoutes = require('./routes/personRoutes');
 const menuItemRoutes = require('./routes/menuItemRoutes');
 
 // Use the routers
-app.use('/person',localAuthMiddleware, personRoutes);
+app.use('/person', personRoutes);
 app.use('/menu', menuItemRoutes); 
 
 
